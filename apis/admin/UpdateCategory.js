@@ -5,7 +5,7 @@ async function UpdateCategory(req, res) {
   try {
     const { id, category_name, category_description, status } = req.body;
 
-    if (!id || !ObjectId.isValid(id)) {
+    if (!id) {
       return res.status(400).json({ success: false, message: "Valid category ID is required" });
     }
 
